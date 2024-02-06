@@ -66,3 +66,12 @@ def allLongestStrings(inputArray):
     return outputArray
 
 #%%
+def countcaracter(s1,s2):
+    total = 0
+    for i in set(s1):
+        if i in s2:
+            total += min(s1.count(i),s2.count(i))
+    return total
+
+#%%
+
