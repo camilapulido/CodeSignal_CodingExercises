@@ -45,3 +45,15 @@ def almostIncreasingSquence(sequence):
     return counter <= 1  
 
 #%%
+def matrixElementsSum(matrix):
+    matrix2 = matrix
+    if len(matrix2)>1:
+        for floor in range(1,len(matrix2)):
+            for room in range(0,len(matrix2[floor])):
+                if matrix2[floor-1][room] == 0:
+                    matrix2[floor][room] = 0
+    
+    availability = 0
+    for floor in matrix2:
+           availability+=sum(floor)              
+    return (availability, matrix2)
