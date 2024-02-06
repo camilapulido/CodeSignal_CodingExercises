@@ -57,3 +57,12 @@ def matrixElementsSum(matrix):
     for floor in matrix2:
            availability+=sum(floor)              
     return (availability, matrix2)
+
+#%%
+
+def allLongestStrings(inputArray):
+    LongestString =max(len(i) for i in inputArray)
+    outputArray =[i for i in inputArray if len(i) == LongestString]
+    return outputArray
+
+#%%
