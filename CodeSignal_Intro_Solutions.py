@@ -74,4 +74,65 @@ def countcaracter(s1,s2):
     return total
 
 #%%
+def luckynumber(n):
+    m = str(n)
+    f = [int(m[i]) for i in range(0,int(len(m)/2))] 
+    s = [int(m[i]) for i in range(int(len(m)/2),len(m))] 
+    return sum(f) == sum(s)
+
+#%%
+def sortyHeight(a):
+    b = [x for x in sorted(a) if x>=0]
+    n =0
+    for i in range(0,len(a)):
+        if a[i] >=0:
+           a[i] = b[n]
+           n+=1
+        else:
+            continue
+    return a
+
+#%%
+
+def reverseParenthesis(inputString):
+    Output = inputString
+    for i, e in reversed(list(enumerate(Output))):
+        if  e =='(':
+            c = Output.index(")",i,)
+            Output = Output.replace(Output[i:c+1],Output[c-1:i:-1])
+    return Output
+
+
+#%%
+
+def reverseParenthesis2(s):
+    print (s)
+    for i in range(len(s)):
+        if s[i] == "(":
+            start = i
+        if s[i] == ")":
+            end = i
+            
+            return reverseParenthesis2(s[:start] + s[start+1:end][::-1] + s[end+1:])
+            
+    return s
+
+
+#%%
+
+def addborder(picture):
+   l = len(picture[0])+2
+   return ['*'*l]+[x.center(l,'*') for x in picture]+['*'*l]
+    
+#%%
+def AlmostSimilar(a,b):
+    notinloc = [i for i,x in enumerate(b) if x != a[i]]
+   
+    if len(notinloc) != 2:
+       return False
+
+    if not notinloc:
+       return False
+    
+    return a[notinloc[0]]==b[notinloc[1]] and a[notinloc[0]]==b[notinloc[1]]
 
