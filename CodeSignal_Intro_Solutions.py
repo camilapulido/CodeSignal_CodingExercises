@@ -142,3 +142,9 @@ def arrayChange(inputArray):
         if inputArray[i] <= outputArray[i-1]:
             outputArray[i] = (outputArray[i-1] + 1)
     return (sum(outputArray)-sum(inputArray))
+
+#%%
+def arrangePalindrome(a):
+    return sum([a.count(i)%2 for i in set(a)]) <= 1
+
+#%%
