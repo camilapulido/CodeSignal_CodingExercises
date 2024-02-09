@@ -135,4 +135,10 @@ def AlmostSimilar(a,b):
        return False
     
     return a[notinloc[0]]==b[notinloc[1]] and a[notinloc[0]]==b[notinloc[1]]
-
+#%%%
+def arrayChange(inputArray):
+    outputArray = inputArray.copy()
+    for i in range(1,len(inputArray)):
+        if inputArray[i] <= outputArray[i-1]:
+            outputArray[i] = (outputArray[i-1] + 1)
+    return (sum(outputArray)-sum(inputArray))
