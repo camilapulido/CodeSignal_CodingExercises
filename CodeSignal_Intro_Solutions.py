@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Author: Camila Pulido
-Code Signal -- Arcade -- Level-1
+Code Signal -- Arcade --
 """
 
 #%%
