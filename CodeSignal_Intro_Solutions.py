@@ -148,3 +148,9 @@ def arrangePalindrome(a):
     return sum([a.count(i)%2 for i in set(a)]) <= 1
 
 #%%
+def jumpObstacles2(inputArray):
+    step =2
+    while True:
+        if all(x%step!=0 for x in inputArray):
+            return step
+        step=step+1
