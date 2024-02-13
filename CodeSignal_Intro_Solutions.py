@@ -154,3 +154,20 @@ def jumpObstacles2(inputArray):
         if all(x%step!=0 for x in inputArray):
             return step
         step=step+1
+#%%
+def BoxBlur(image):
+    imageWidth = len(image[0])
+    imageheight = len(image)
+    
+    blurimage = []
+       
+    for y in range(1,imageheight-1):
+        test=[]
+        for x in range(1,imageWidth-1):
+            Top = sum(image[y-1][x-1:(x-1)+3])
+            Bottom = sum(image[y+1][x-1:(x-1)+3])
+            Center = (image[y][x-1] + image[y][x]+image[y][x+1])
+            test.append((Top+Bottom+Center)//9)
+        blurimage.append(test)    
+    return blurimage
+#%%
