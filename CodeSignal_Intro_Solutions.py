@@ -171,6 +171,35 @@ def BoxBlur(image):
         blurimage.append(test)    
     return blurimage
 #%%
+def Minesweeper(matrix):
+    TOP = 0
+    BOTTOM = len(matrix) - 1
+    LEFT = 0
+    RIGHT = len(matrix[0]) - 1
+    outMatrix = []
+    for row in range(len(matrix)):
+        outRow = []
+        for col in range(len(matrix[row])):
+            outRow.append(0)
+            if row != TOP: 
+                outRow[col] += matrix[row - 1][col]
+            if row != BOTTOM:
+                outRow[col] += matrix[row + 1][col]
+            if col != LEFT:
+                outRow[col] += matrix[row][col - 1]
+            if col != RIGHT:
+                outRow[col] += matrix[row][col + 1]
+            if row != TOP and col != LEFT:
+                outRow[col] += matrix[row - 1][col - 1]
+            if row != TOP and col != RIGHT:
+                outRow[col] += matrix[row - 1][col + 1]
+            if row != BOTTOM and col != LEFT:
+                outRow[col] += matrix[row + 1][col - 1]
+            if row != BOTTOM and col != RIGHT:
+                outRow[col] += matrix[row + 1][col + 1]
+        outMatrix.append(outRow)
+    return outMatrix
+#%%
 def ArrayRaplace(inputArray, elemToReplace, substitutionElem):
     return [i if i!= elemToReplace else substitutionElem for i in inputArray]
             
