@@ -200,7 +200,7 @@ def Minesweeper(matrix):
         outMatrix.append(outRow)
     return outMatrix
 #%%
-def ArrayRaplace(inputArray, elemToReplace, substitutionElem):
+def ArrayReplace(inputArray, elemToReplace, substitutionElem):
     return [i if i!= elemToReplace else substitutionElem for i in inputArray]
             
 #%%
