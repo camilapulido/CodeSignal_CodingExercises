@@ -171,3 +171,34 @@ def BoxBlur(image):
         blurimage.append(test)    
     return blurimage
 #%%
+def ArrayRaplace(inputArray, elemToReplace, substitutionElem):
+    return [i if i!= elemToReplace else substitutionElem for i in inputArray]
+            
+#%%
+def evedigitsonaly(n):
+    m=str(n)
+    return all([int(i)%2==0 for i in m])
+                
+#%%
+def variableName(name):
+    for i in name:
+        if not(i.isalpha() or i.isdigit() or i=="_"):
+            return False
+        
+    if name[0].isdigit():
+        return False
+    else:
+        return True
+    
+#%%
+def alphashift(inputString):
+    import string
+    alphaStr = string.ascii_lowercase+'a'
+    outpuStr=''
+    for i in inputString:
+        outpuStr+=alphaStr[alphaStr.find(i)+1]
+    return outpuStr
+    
+#%%
+def chessBoardCellColor(cell1, cell2):  
+    return ((ord(cell1[0])%2 == (int(cell1[1])-1)%2) + ((ord(cell2[0]))%2 == (int(cell2[1])-1)%2)) !=1
