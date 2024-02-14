@@ -235,3 +235,12 @@ def CircleofNumbers(n, Fnum):
 #%%
 def chessBoardCellColor(cell1, cell2):  
     return ((ord(cell1[0])%2 == (int(cell1[1])-1)%2) + ((ord(cell2[0]))%2 == (int(cell2[1])-1)%2)) !=1
+
+#%%
+def depositprofit(deposit, rate, threshold):
+    year = 0
+    while deposit < threshold:
+        deposit += deposit*(rate/100)
+        year +=1
+    return year
+#%%
