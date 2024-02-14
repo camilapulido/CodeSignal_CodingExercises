@@ -227,6 +227,10 @@ def alphashift(inputString):
     for i in inputString:
         outpuStr+=alphaStr[alphaStr.find(i)+1]
     return outpuStr
+
+#%%
+def CircleofNumbers(n, Fnum):    
+    return Fnum-n/2 if Fnum >= n/2 else n/2+Fnum
     
 #%%
 def chessBoardCellColor(cell1, cell2):  
